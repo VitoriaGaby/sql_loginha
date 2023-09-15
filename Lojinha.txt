@@ -1,0 +1,37 @@
+creat database Loginha;
+
+use loginha;
+
+CREATE TABLE Clientes(
+    id_Cliente int AUTO_INCREMENT PRIMARY key,
+    Nome_Cliente char(50),
+    CPF_Cliente char(15),
+    Data_Nasc date
+);
+
+Creat Table tbl_telefones(
+    id_Fone int AUTO_INCREMENT PRIMARY key,
+    id_Cliente int(11),
+    Telefone char(19)
+    fk_id_Cliente int not null,
+    FOREIGN key(id_Cliente) REFERENCES id_Cliente(id_Cliente)
+);
+
+Creat Table tbl_produtos(
+    id_Produtos int AUTO_INCREMENT PRIMARY key,
+    Nome_Prod char(50),
+    Categoria char(50),
+    Preco_Prod dec(50,0)
+);
+
+Creat Table tbl_vendas( 
+    id_Venda int AUTO_INCREMENT PRIMARY key,
+    id_Cliente int(5),
+    id_Produto int(5),
+    Quantidade dec(50,0),
+    Data_Vendas date
+    fk_id_Produto int not null,
+    FOREIGN key(id_Produto) REFERENCES id_Produto(id_Produto)
+);
+    
+    
